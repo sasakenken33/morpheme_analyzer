@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block body %}
+  <div class="form">
+    <form action="/fetch" method="post">
+      <div class="form-group">
+        <label for="InputText">解析するテキスト</label><br>
+          <input type="text" class="form-control" id="InputText" name="InputText">
+      </div>
+      <button type="submit">解析スタート</button>
+    </form>
+  </div>
+{% endblock %}
