@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block body %}
+  <div class="result">
+    <h2>解析結果</h2>
+    {% for result in results %}
+      {{ result }}
+    {% endfor %}
+  </div>
+{% endblock %}

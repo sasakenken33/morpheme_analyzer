@@ -1,12 +1,11 @@
 {% extends "layout.html" %}
 {% block body %}
   <div class="form">
-    <form action="/fetch" method="post">
-      <div class="form-group">
-        <label for="InputText">解析するテキスト</label><br>
-          <input type="text" id="InputText" name="InputText">
-      </div>
-      <button type="submit">解析スタート</button>
+    <h2>分析したいテキストを入力してください</h2>
+    <form action="/fetch" method="POST">
+      <textarea placeholder="分析するテキスト" name="InputText"></textarea>
+      <br>
+      <input value="送信" type="submit"/>
     </form>
   </div>
 {% endblock %}
