@@ -2,8 +2,30 @@
 {% block body %}
   <div class="result">
     <h2>解析結果</h2>
-    {% for result in results %}
-      {{ result }}
-    {% endfor %}
+    <a href="/">戻る</a>
+    <section id="noun_list">
+      <table>
+        <tr>
+          <th>名詞</th><th>出現回数</th>
+        </tr>
+        {% for result in results_noun %}
+        <tr>
+          <td>{{ result[0] }}</td><td>{{ result[1] }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </section>
+    <section id="verb_list">
+      <table>
+        <tr>
+          <th>動詞</th><th>出現回数</th>
+        </tr>
+        {% for result in results_verb %}
+        <tr>
+          <td>{{ result[0] }}</td><td>{{ result[1] }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </section>
   </div>
 {% endblock %}
