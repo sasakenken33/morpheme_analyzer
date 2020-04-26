@@ -15,22 +15,28 @@ def top():
 def fetch():
   if request.method == "POST":
     if request.form["InputText"]:
-      results_verb = []
       results_noun = []
+      results_verb = []
 
       text = request.form["InputText"]
       
       token_filters = [POSKeepFilter(['名詞']), TokenCountFilter(sorted=True)]
       a = Analyzer(token_filters=token_filters)
       for k, v in a.analyze(text):
-        results_verb.append([k,v])
+        results_noun.append([k,v])
+      delete_extra(results_noun)
       
       token_filters = [POSKeepFilter(['動詞']), TokenCountFilter(sorted=True)]
       a = Analyzer(token_filters=token_filters)
       for k, v in a.analyze(text):
-        results_noun.append([k,v])
+        results_verb.append([k,v])
+      delete_extra(results_verb)
 
       return render_template("result.html", results_noun=results_noun, results_verb=results_verb)
     else:
       flash("テキストが入力されていません")
   return render_template("top.html")
+
+def delete_extra(array):
+  if len(array) > 20:
+    array[20:-1] = []
