@@ -1,11 +1,48 @@
 {% extends "layout.html" %}
 {% block body %}
-  <div class="form">
-    <h2>分析したいテキストを入力してください</h2>
-    <form action="/fetch" method="POST">
-      <textarea placeholder="分析するテキスト" name="InputText"></textarea>
-      <br>
-      <input value="送信" type="submit"/>
-    </form>
+<section class="top">
+  <div class="container">
+    <h1>仮ロゴ</h1>
   </div>
+</section>
+<section class="main">
+  <div class="disc">
+    <div class="container">
+      <h2>What is XXX?</h2>
+      <p>Morpheme_Analyzerは、文学作品を形態素解析します</p>
+      <p>こんなことができます</p>
+      <div class="icons">
+        <div class="text">
+          <span class="fas fa-font icon"></span>
+          <h3>名詞抽出</h3>
+        </div>
+        <div class="text">
+          <span class="fab fa-fonticons-fi icon"></span>
+          <h3>動詞抽出</h3>
+        </div>
+        <div class="text">
+          <span class="fas fa-sort-amount-down icon"></span>
+          <h3>出現回数計測</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form"> 
+    <div class="container">
+      <h2>形態素解析する文章を入力してください</h2>
+      <div class="flash">
+        {% for message in get_flashed_messages() %}
+          {{ message }}
+        {% endfor %}
+      </div>
+      <form action="/fetch" method="post">
+        <dl>
+          <dt>解析対象文章</dt>
+          <dd><input type="text" name="InputText"></dd>
+          <p><input type="submit" value="解析START"/></p>
+        </dl>   
+      </form>
+    </div>
+  </div>
+</section>
 {% endblock %}
