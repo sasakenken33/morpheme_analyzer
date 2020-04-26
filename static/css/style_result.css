@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+section.title {
+  background-color: navy;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+.title h1 {
+  text-align: center;
+  font-size: 2rem;
+  letter-spacing: 0.8rem;
+}
+.title p {
+  padding-top: 2rem;
+  text-align: center;
+  font-size: 1rem;
+}
+a {
+  color: white;
+}
+
+section.noun_list {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  text-align: center;
+  background-color: azure;
+}
+section.verb_list {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  text-align: center;
+  background-color: aliceblue;
+}
+table {
+  margin: 0 auto;
+  border: 1px solid #696969;
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 20rem;
+}
+table th {
+  background-color: navy;
+  color: whitesmoke;
+}
+table th,
+table td {
+  border: 1px solid #333;
+}
+
+/*画面幅768px~990px（タブレット）メディアクエリ*/
+@media screen and (min-width:768px) {
+  section.title {
+    height: 20vh;
+  }
+  .title h1 {
+    font-size: 4rem;
+  }
+  .title p {
+    font-size: 2rem;
+  }
+  section.lists {
+    display: flex;
+    height: 80vh;
+  }
+  section.noun_list {
+    flex: 1;
+    padding-top: 8rem;
+  }
+  section.verb_list {
+    flex: 1;
+    padding-top: 8rem;
+  }
+  table {
+    width: 30rem;
+    height: 50rem;
+    font-size: 1.5rem;
+  }
+}
+
+/*990px~（PC）メディアクエリ*/
+@media screen and (min-width:990px){
+
+}
