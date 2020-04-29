@@ -35,11 +35,12 @@
           {{ message }}
         {% endfor %}
       </div>
+      <div class="loader hidden"></div>
       <form action="/fetch" method="post">
         <dl>
           <dt>解析対象文章</dt>
           <dd><input type="text" name="InputText"></dd>
-          <p><input type="submit" value="解析START"/></p>
+          <p><input type="submit" value="解析START" id="btn"/></p>
         </dl>   
       </form>
     </div>
